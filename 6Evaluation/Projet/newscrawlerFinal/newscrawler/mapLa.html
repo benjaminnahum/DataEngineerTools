@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_592dde5d4ab1491f98252ee3f539e3e5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+             <h3 align="center" style="font-size:20px"><b>Carte distinguant la moyenne des prix des hôtels en fonction de leur quartier.</b></h3>
+             
+    
+            <div class="folium-map" id="map_592dde5d4ab1491f98252ee3f539e3e5" ></div>
+        
+    
+
+    <!doctype html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Draggable - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script>
+    $( function() {
+        $( "#maplegend" ).draggable({
+                        start: function (event, ui) {
+                            $(this).css({
+                                right: "auto",
+                                top: "auto",
+                                bottom: "auto"
+                            });
+                        }
+                    });
+    });
+
+    </script>
+    </head>
+    <body>
+
+    
+    <div id='maplegend' class='maplegend' 
+        style='position: absolute; z-index:9999; border:2px solid grey; background-color:rgba(255, 255, 255, 0.8);
+        border-radius:6px; padding: 10px; font-size:14px; right: 20px; bottom: 20px;'>
+        
+    <div class='legend-title'>Legende</div>
+    <div class='legend-scale'>
+    <ul class='legend-labels'>
+        <li><span style='background:green;opacity:1;'></span>Prix Bas</li>
+        <li><span style='background:orange;opacity:1;'></span>Prix Moyen</li>
+        <li><span style='background:red;opacity:1;'></span>Prix Élevé</li>
+        <li><span style='background:black;opacity:1;'></span>Prix très élevé</li>
+
+    </ul>
+    </div>
+    </div>
+    
+    </body>
+    </html>
+
+    <style type='text/css'>
+    .maplegend .legend-title {
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 90%;
+        }
+    .maplegend .legend-scale ul {
+        margin: 0;
+        margin-bottom: 5px;
+        padding: 0;
+        float: left;
+        list-style: none;
+        }
+    .maplegend .legend-scale ul li {
+        font-size: 80%;
+        list-style: none;
+        margin-left: 0;
+        line-height: 18px;
+        margin-bottom: 2px;
+        }
+    .maplegend ul.legend-labels li span {
+        display: block;
+        float: left;
+        height: 16px;
+        width: 30px;
+        margin-right: 5px;
+        margin-left: 0;
+        border: 1px solid #999;
+        }
+    .maplegend .legend-source {
+        font-size: 80%;
+        color: #777;
+        clear: both;
+        }
+    .maplegend a {
+        color: #777;
+        }
+    </style>
+    
+</body>
+<script>    
+    
+            var map_592dde5d4ab1491f98252ee3f539e3e5 = L.map(
+                "map_592dde5d4ab1491f98252ee3f539e3e5",
+                {
+                    center: [34.003342, -118.485832],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 9,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9738a5f59e85455fbfb3e48d2f73113d = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var marker_d59172822c3f465ba2db158bef8c93db = L.marker(
+                [34.052234, -118.243685],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_268a8ab4b0a54d3ba864aacda4752665 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d59172822c3f465ba2db158bef8c93db.setIcon(icon_268a8ab4b0a54d3ba864aacda4752665);
+        
+    
+        var popup_5c66f48ae4ef4809b7c5adfd49023eff = L.popup({"maxWidth": "100%"});
+
+        
+            var html_396ad2c12308453f95cf5ff21457e561 = $(`<div id="html_396ad2c12308453f95cf5ff21457e561" style="width: 100.0%; height: 100.0%;">1942.4166666666667</div>`)[0];
+            popup_5c66f48ae4ef4809b7c5adfd49023eff.setContent(html_396ad2c12308453f95cf5ff21457e561);
+        
+
+        marker_d59172822c3f465ba2db158bef8c93db.bindPopup(popup_5c66f48ae4ef4809b7c5adfd49023eff)
+        ;
+
+        
+    
+    
+            marker_d59172822c3f465ba2db158bef8c93db.bindTooltip(
+                `<div>
+                     Los Angeles
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_adb142d0f37f4f74ac9f2345e974a737 = L.marker(
+                [34.0883, -118.372],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_c2f2516bc7f14330bc60d16fdb81ca5a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_adb142d0f37f4f74ac9f2345e974a737.setIcon(icon_c2f2516bc7f14330bc60d16fdb81ca5a);
+        
+    
+        var popup_b0884abb5c324652908fb147e1c27617 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0062bfcfe93349a4a7baa836b21e26a9 = $(`<div id="html_0062bfcfe93349a4a7baa836b21e26a9" style="width: 100.0%; height: 100.0%;">1930.2</div>`)[0];
+            popup_b0884abb5c324652908fb147e1c27617.setContent(html_0062bfcfe93349a4a7baa836b21e26a9);
+        
+
+        marker_adb142d0f37f4f74ac9f2345e974a737.bindPopup(popup_b0884abb5c324652908fb147e1c27617)
+        ;
+
+        
+    
+    
+            marker_adb142d0f37f4f74ac9f2345e974a737.bindTooltip(
+                `<div>
+                     West Hollywood
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f9fc7ed3e0b7473083d74be4e4de2629 = L.marker(
+                [33.7531, -118.367],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_9b3f810cb114498f964b6c522699a406 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f9fc7ed3e0b7473083d74be4e4de2629.setIcon(icon_9b3f810cb114498f964b6c522699a406);
+        
+    
+        var popup_19fed88ca7b747e0b4017f2c8d215e11 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aaf2f9c74d964f1181ee57c1f36e15a9 = $(`<div id="html_aaf2f9c74d964f1181ee57c1f36e15a9" style="width: 100.0%; height: 100.0%;">1813.25</div>`)[0];
+            popup_19fed88ca7b747e0b4017f2c8d215e11.setContent(html_aaf2f9c74d964f1181ee57c1f36e15a9);
+        
+
+        marker_f9fc7ed3e0b7473083d74be4e4de2629.bindPopup(popup_19fed88ca7b747e0b4017f2c8d215e11)
+        ;
+
+        
+    
+    
+            marker_f9fc7ed3e0b7473083d74be4e4de2629.bindTooltip(
+                `<div>
+                     Rancho Palos Verdes
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5be0d2bb2fed49c99a859cbbf5544e4e = L.marker(
+                [33.7866, -118.2987],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_715bdfc62a1d46f9bf028400759aa940 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5be0d2bb2fed49c99a859cbbf5544e4e.setIcon(icon_715bdfc62a1d46f9bf028400759aa940);
+        
+    
+        var popup_745e149b62f9409d8a0c131ef454688f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a00283bb3ba342cd8d3dbb7408aa0903 = $(`<div id="html_a00283bb3ba342cd8d3dbb7408aa0903" style="width: 100.0%; height: 100.0%;">1795.0</div>`)[0];
+            popup_745e149b62f9409d8a0c131ef454688f.setContent(html_a00283bb3ba342cd8d3dbb7408aa0903);
+        
+
+        marker_5be0d2bb2fed49c99a859cbbf5544e4e.bindPopup(popup_745e149b62f9409d8a0c131ef454688f)
+        ;
+
+        
+    
+    
+            marker_5be0d2bb2fed49c99a859cbbf5544e4e.bindTooltip(
+                `<div>
+                     Pasadena
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_32d91ddf639d4766b4e75f263afc61ff = L.marker(
+                [34.074499, -118.371635],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_ea0379ba7f3d48fb8e01e1b8523ef361 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_32d91ddf639d4766b4e75f263afc61ff.setIcon(icon_ea0379ba7f3d48fb8e01e1b8523ef361);
+        
+    
+        var popup_848e8ff4e4f1440db66d87b78779c5d8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1619dc43a42b470aaf6796fe9e662fcd = $(`<div id="html_1619dc43a42b470aaf6796fe9e662fcd" style="width: 100.0%; height: 100.0%;">2530.5</div>`)[0];
+            popup_848e8ff4e4f1440db66d87b78779c5d8.setContent(html_1619dc43a42b470aaf6796fe9e662fcd);
+        
+
+        marker_32d91ddf639d4766b4e75f263afc61ff.bindPopup(popup_848e8ff4e4f1440db66d87b78779c5d8)
+        ;
+
+        
+    
+    
+            marker_32d91ddf639d4766b4e75f263afc61ff.bindTooltip(
+                `<div>
+                     Beverly Grove
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_014461870c114250be7aac8d16eb6ebb = L.marker(
+                [34.08732, -118.38558],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_eac58dde3f884577870c9aed8e267a37 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_014461870c114250be7aac8d16eb6ebb.setIcon(icon_eac58dde3f884577870c9aed8e267a37);
+        
+    
+        var popup_fe2d5bb531d84d7692269a26af73b116 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3e07c67835914dbcac3a2538b02ef6c1 = $(`<div id="html_3e07c67835914dbcac3a2538b02ef6c1" style="width: 100.0%; height: 100.0%;">2248.25</div>`)[0];
+            popup_fe2d5bb531d84d7692269a26af73b116.setContent(html_3e07c67835914dbcac3a2538b02ef6c1);
+        
+
+        marker_014461870c114250be7aac8d16eb6ebb.bindPopup(popup_fe2d5bb531d84d7692269a26af73b116)
+        ;
+
+        
+    
+    
+            marker_014461870c114250be7aac8d16eb6ebb.bindTooltip(
+                `<div>
+                     Norma Triangle
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8faa04c126be4400b7dbbbd2e1a577f0 = L.marker(
+                [34.003342, -118.485832],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_ffc3efae19c444d3a87dc05b98a92ccd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_8faa04c126be4400b7dbbbd2e1a577f0.setIcon(icon_ffc3efae19c444d3a87dc05b98a92ccd);
+        
+    
+        var popup_41cb9b45193f4dae943a958f34eebfa7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8ce6caca9ea64087b4f0c298f0e6b442 = $(`<div id="html_8ce6caca9ea64087b4f0c298f0e6b442" style="width: 100.0%; height: 100.0%;">2115.0</div>`)[0];
+            popup_41cb9b45193f4dae943a958f34eebfa7.setContent(html_8ce6caca9ea64087b4f0c298f0e6b442);
+        
+
+        marker_8faa04c126be4400b7dbbbd2e1a577f0.bindPopup(popup_41cb9b45193f4dae943a958f34eebfa7)
+        ;
+
+        
+    
+    
+            marker_8faa04c126be4400b7dbbbd2e1a577f0.bindTooltip(
+                `<div>
+                     Centre-ville de Los Angeles
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c3d5ab2240b7407ab4147ee5060f6c9f = L.marker(
+                [33.7866, -118.2987],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_7de4188a7bf04cc8a83a79e7a97fc0c3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_c3d5ab2240b7407ab4147ee5060f6c9f.setIcon(icon_7de4188a7bf04cc8a83a79e7a97fc0c3);
+        
+    
+        var popup_0cd6ce2d4c51462d95ff0de2ff57a279 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f9ad2fddaba04e3ca116c7ffd2a1d593 = $(`<div id="html_f9ad2fddaba04e3ca116c7ffd2a1d593" style="width: 100.0%; height: 100.0%;">2075.0</div>`)[0];
+            popup_0cd6ce2d4c51462d95ff0de2ff57a279.setContent(html_f9ad2fddaba04e3ca116c7ffd2a1d593);
+        
+
+        marker_c3d5ab2240b7407ab4147ee5060f6c9f.bindPopup(popup_0cd6ce2d4c51462d95ff0de2ff57a279)
+        ;
+
+        
+    
+    
+            marker_c3d5ab2240b7407ab4147ee5060f6c9f.bindTooltip(
+                `<div>
+                     Marina del Rey
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_536636af523242a0868a58364a8aabbc = L.marker(
+                [34.041742, -118.246893],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_3b1a434ef55b48dd87425cc319ba8b81 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_536636af523242a0868a58364a8aabbc.setIcon(icon_3b1a434ef55b48dd87425cc319ba8b81);
+        
+    
+        var popup_809c8188bc9f42a888ac3fb14d2e300b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4c63bb5d4cde41f4bd9f34151f609a44 = $(`<div id="html_4c63bb5d4cde41f4bd9f34151f609a44" style="width: 100.0%; height: 100.0%;">3093.3333333333335</div>`)[0];
+            popup_809c8188bc9f42a888ac3fb14d2e300b.setContent(html_4c63bb5d4cde41f4bd9f34151f609a44);
+        
+
+        marker_536636af523242a0868a58364a8aabbc.bindPopup(popup_809c8188bc9f42a888ac3fb14d2e300b)
+        ;
+
+        
+    
+    
+            marker_536636af523242a0868a58364a8aabbc.bindTooltip(
+                `<div>
+                     Downtown
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_289947161bc2469aaac1d6473bd499ab = L.marker(
+                [34.067213, -118.400028],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_f435d897269b47d498a4a39d9061cb9f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_289947161bc2469aaac1d6473bd499ab.setIcon(icon_f435d897269b47d498a4a39d9061cb9f);
+        
+    
+        var popup_f35744faa5164ad795f45d458b92153f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5262335c974c4e0487dc704be652abd6 = $(`<div id="html_5262335c974c4e0487dc704be652abd6" style="width: 100.0%; height: 100.0%;">3085.5</div>`)[0];
+            popup_f35744faa5164ad795f45d458b92153f.setContent(html_5262335c974c4e0487dc704be652abd6);
+        
+
+        marker_289947161bc2469aaac1d6473bd499ab.bindPopup(popup_f35744faa5164ad795f45d458b92153f)
+        ;
+
+        
+    
+    
+            marker_289947161bc2469aaac1d6473bd499ab.bindTooltip(
+                `<div>
+                     Beverly Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1399bd48006d4866bc3864c24ed71d44 = L.marker(
+                [34.0022327, -118.4836906],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_4c793aede21448a08cc882e1e1dbf273 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1399bd48006d4866bc3864c24ed71d44.setIcon(icon_4c793aede21448a08cc882e1e1dbf273);
+        
+    
+        var popup_4a904d93e7cf47b3a3f77098f3e3d99b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d1a89c21ac244849b067cb5e8c06b1a1 = $(`<div id="html_d1a89c21ac244849b067cb5e8c06b1a1" style="width: 100.0%; height: 100.0%;">2754.25</div>`)[0];
+            popup_4a904d93e7cf47b3a3f77098f3e3d99b.setContent(html_d1a89c21ac244849b067cb5e8c06b1a1);
+        
+
+        marker_1399bd48006d4866bc3864c24ed71d44.bindPopup(popup_4a904d93e7cf47b3a3f77098f3e3d99b)
+        ;
+
+        
+    
+    
+            marker_1399bd48006d4866bc3864c24ed71d44.bindTooltip(
+                `<div>
+                     Ocean Park
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_346407d1954a4227b28c3e22398a9ebb = L.marker(
+                [34.008991, -118.497269],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_e5332252444c43639f2333e0f796d116 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_346407d1954a4227b28c3e22398a9ebb.setIcon(icon_e5332252444c43639f2333e0f796d116);
+        
+    
+        var popup_8cc1fea7633d4ac28a5f74f99832b69d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_50e1d8b015894f67b67e054f6501325f = $(`<div id="html_50e1d8b015894f67b67e054f6501325f" style="width: 100.0%; height: 100.0%;">2722.6470588235293</div>`)[0];
+            popup_8cc1fea7633d4ac28a5f74f99832b69d.setContent(html_50e1d8b015894f67b67e054f6501325f);
+        
+
+        marker_346407d1954a4227b28c3e22398a9ebb.bindPopup(popup_8cc1fea7633d4ac28a5f74f99832b69d)
+        ;
+
+        
+    
+    
+            marker_346407d1954a4227b28c3e22398a9ebb.bindTooltip(
+                `<div>
+                     Santa Monica
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f5b87ab4f4cf4b6ab2b04d8f3049d58f = L.marker(
+                [34.1933, -118.874],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_56341e83da9144d1858dd4f3d1f1867f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f5b87ab4f4cf4b6ab2b04d8f3049d58f.setIcon(icon_56341e83da9144d1858dd4f3d1f1867f);
+        
+    
+        var popup_cede2ae2c7694d6797511e17a601a7b7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_455d01b426da4effb0ef2c7cbc013877 = $(`<div id="html_455d01b426da4effb0ef2c7cbc013877" style="width: 100.0%; height: 100.0%;">2593.75</div>`)[0];
+            popup_cede2ae2c7694d6797511e17a601a7b7.setContent(html_455d01b426da4effb0ef2c7cbc013877);
+        
+
+        marker_f5b87ab4f4cf4b6ab2b04d8f3049d58f.bindPopup(popup_cede2ae2c7694d6797511e17a601a7b7)
+        ;
+
+        
+    
+    
+            marker_f5b87ab4f4cf4b6ab2b04d8f3049d58f.bindTooltip(
+                `<div>
+                     Thousand Oaks
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2caba642b6ce44a190f01dda41a98b76 = L.marker(
+                [34.077457, -118.406049],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_e269280e6ff64809a53df533d2c2ecab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_2caba642b6ce44a190f01dda41a98b76.setIcon(icon_e269280e6ff64809a53df533d2c2ecab);
+        
+    
+        var popup_9cce8698005f4bd3b57ea52191053910 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6fbcd31b1ef448759f6b11b89a4b84c3 = $(`<div id="html_6fbcd31b1ef448759f6b11b89a4b84c3" style="width: 100.0%; height: 100.0%;">4131.0</div>`)[0];
+            popup_9cce8698005f4bd3b57ea52191053910.setContent(html_6fbcd31b1ef448759f6b11b89a4b84c3);
+        
+
+        marker_2caba642b6ce44a190f01dda41a98b76.bindPopup(popup_9cce8698005f4bd3b57ea52191053910)
+        ;
+
+        
+    
+    
+            marker_2caba642b6ce44a190f01dda41a98b76.bindTooltip(
+                `<div>
+                     The Flats
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_396c522e21d1479791ed577ca9872c9c = L.marker(
+                [34.0833418, -118.4486913],
+                {}
+            ).addTo(map_592dde5d4ab1491f98252ee3f539e3e5);
+        
+    
+            var icon_2837b657b5d7467da848b2b2f14c9b2d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_396c522e21d1479791ed577ca9872c9c.setIcon(icon_2837b657b5d7467da848b2b2f14c9b2d);
+        
+    
+        var popup_f5a6e64694b244188e249225c0dfb315 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_962a85ad7d294c0c9da16152f08593cb = $(`<div id="html_962a85ad7d294c0c9da16152f08593cb" style="width: 100.0%; height: 100.0%;">4088.285714285714</div>`)[0];
+            popup_f5a6e64694b244188e249225c0dfb315.setContent(html_962a85ad7d294c0c9da16152f08593cb);
+        
+
+        marker_396c522e21d1479791ed577ca9872c9c.bindPopup(popup_f5a6e64694b244188e249225c0dfb315)
+        ;
+
+        
+    
+    
+            marker_396c522e21d1479791ed577ca9872c9c.bindTooltip(
+                `<div>
+                     Bel Air
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>

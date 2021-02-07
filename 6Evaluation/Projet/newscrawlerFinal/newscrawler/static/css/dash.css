@@ -1,0 +1,29 @@
+body {
+  font-family: 'Rubik', sans-serif;
+  background-image: -moz-linear-gradient( 135deg, rgba(60, 72, 73, 0.8) 0%, #83AEAA 100%);
+  background-image: -webkit-linear-gradient( 135deg, rgba(60, 72, 73, 0.8) 0%, #83AEAA 100%);
+  background-image: -ms-linear-gradient( 135deg, rgba(60, 72, 73, 0.8) 0%, #83AEAA 100%);
+  background-image: linear-gradient( 135deg, rgba(60, 72, 73, 0.8) 0%, #83AEAA 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  
+
+}
+
+iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 90%;
+
+}
+
+#dashframe {
+  width: 100%;
+  height: 600px;
+  margin: auto;
+}

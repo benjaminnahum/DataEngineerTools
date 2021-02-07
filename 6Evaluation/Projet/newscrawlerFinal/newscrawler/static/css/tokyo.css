@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+/* *{
+  box-sizing: border-box;;
+} */
+
+/* html {
+  font-family: 'Rubik', sans-serif;
+   background-color: #FFF;
+    margin: 0;
+  width: 100%;
+  height: 100%;
+    padding: 0;
+} */
+
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-image: -moz-linear-gradient( 135deg, rgba(12, 22, 112, 0.8) 0%, rgba(49, 97, 201, 0.8) 100%);
+  background-image: -webkit-linear-gradient( 135deg, rgba(60, 8, 118, 0.8) 0%, rgba(49, 97, 201, 0.8) 100%);
+  background-image: -ms-linear-gradient( 135deg, rgba(60, 8, 118, 0.8) 0%, rgba(49, 97, 201, 0.8) 100%);
+  background-image: linear-gradient( 135deg, rgba(60, 8, 118, 0.8) 0%, rgba(49, 97, 201, 0.8) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    margin: 0;
+  width: 100%;
+  height: 100%;
+    padding: 0;
+}
+
+.product-list {
+  font-family: 'Rubik', sans-serif;
+  padding: 0;
+  margin: 0;
+  /* width: 100%;
+  height: 100%; */
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  /* -webkit-justify-content: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  align-items: center; */
+  justify-content: center;
+    -webkit-justify-content: center;
+}
+
+.product-list span {
+  font-size: 13px;
+}
+.cards h3{
+  font-size: 17px;
+}
+
+.cards i {
+  color: #868686;
+}
+
+.result-number p{
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+}
+
+
+.cards {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    max-width: 100%;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+
+.card__like {
+    width: 18px;
+}
+
+.card__clock {
+    width: 15px;
+  vertical-align: middle;
+    fill: #AD7D52;
+}
+.card__time {
+    font-size: 12px;
+    color: #633991;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.card__clock-info2 {
+    float: left;
+    text-align:center;
+    white-space: pre;
+}
+.card__clock-info {
+    float: left;
+    text-align:center;
+    white-space: pre;
+}
+
+.card__img {
+  visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 235px;
+  border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+  
+}
+
+.card__info-hover {
+  font-size: 10px;
+    position: static;
+    padding: 16px;
+  width: auto;
+  opacity: 0;
+  top: 0;
+}
+
+.card__img--hover {
+  transition: 0.2s all ease-out;
+    background-size: contain; /*le parametre cover offre un meilleur effet mais les images ne rentrent parfois pas*/
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+  position: absolute;
+    height: 235px;
+  border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+top: 0;
+  
+}
+.card {
+  margin-right: 25px;
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+    width: 20%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+  margin-top: 50px;
+}
+.card:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+    transform: scale(1.10, 1.10);
+}
+
+.card__info {
+z-index: 2;
+margin-bottom: 10px;
+
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+   padding: 24px 24px 24px 24px;
+}
+
+.card__category {
+    /* font-family: 'Raleway', sans-serif; */
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+  color: #868686;
+}
+
+.card__title {
+    margin-top: 2px;
+    margin-bottom: 10px;
+    display: block;
+    /* font-family: 'Roboto Slab', serif; */
+}
+
+.card__title2 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: black;
+  float: left;
+ 
+  /* font-family: 'Roboto Slab', serif; */
+}
+
+.card__by {
+    font-size: 12px;
+    /* font-family: 'Raleway', sans-serif; */
+    font-weight: 500;
+    left: 15%;
+    position: left;
+    float: left;
+    white-space: pre;
+    
+    
+}
+
+.card__by2 {
+    font-size: 12px;
+    /* font-family: 'Raleway', sans-serif; */
+    font-weight: 500; 
+    right:15%;
+    float: right;
+    white-space: pre;
+    
+
+}
+
+
+
+
+.card__author {
+    font-weight: 600;
+    text-decoration: none;
+    color: #AD7D52;
+    bottom: 0;
+    left: 0;
+
+}
+
+.card__avis {
+  font-size: 12px;
+  /* font-family: 'Raleway', sans-serif; */
+  font-weight: 500; 
+  
+  float: right;
+  position: static;
+
+}
+
+
+
+.card:hover .card__img--hover {
+    opacity: 0.3;
+}
+
+
+
+.card:hover .card__info-hover {
+    opacity: 1;
+
+}
+
+iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vh;
+  height: 90vh;
+}
+
+.example_e {
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+  text-align: center;
+  }
+
+.example_e:hover {
+
+ 
+
+  color: #404040 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+  }
+
+
+.example_ee {
+  border: none;
+  font-weight: 100;
+  padding: 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+  background-image: url('https://hotelnumberfour.com/wp-content/uploads/2017/09/Expedia-logo.jpg'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  width:53px;
+  height: 40px;
+  }
+
+.example_ee:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  transition: all 0.3s ease 0s;
+  }
+
+
+.example_eee {
+  border: none;
+  font-weight: 100;
+  padding: 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+  background-image: url('https://www.kindpng.com/picc/m/78-780893_40-off-hotels-hotels-com-logo-png-transparent.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  width:55px;
+  height: 40px;
+  }
+
+.example_eee:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  transition: all 0.3s ease 0s;
+  }
+  
+.example_vert {
+  border: none;
+  background: #1c8502;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+  text-align: center;
+  }
+
+.example_vert:hover {
+  color:  #1c8502;
+  font-weight: 700;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+  }
+.example_orange {
+  border: none;
+  background: #f0850b;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+  text-align: center;
+  }
+
+.example_orange:hover {
+  color: #f0850b;
+  font-weight: 700;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+  }
+  .example_rouge {
+  border: none;
+  background: #c70f0f;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+  text-align: center;
+  }
+
+.example_rouge:hover {
+  color:  #c70f0f;
+  font-weight: 700;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+  }
+.example_noir {
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+  text-align: center;
+  }
+
+.example_noir:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+  }
+    
